@@ -21,7 +21,7 @@ Before you begin, ensure you have the following installed:
 
     Copy code
 
-    `git clone https://github.com/your-username/bookkeeper.git
+    `git clone https://github.com/unlikelycreator/bookkeeper.git
     cd bookkeeper`
 
 2.  **Install dependencies for the front end:**
