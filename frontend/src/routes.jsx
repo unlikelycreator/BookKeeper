@@ -10,7 +10,7 @@ import MonthFilter from './components/Pages/Filters/MonthFilter';
 const App = () => {
   return (
     <Routes>
-      <Route path="/" element={<Navigate to="/landing" replace />} />
+      <Route path="/" element={<Navigate to="/login" replace />} />
       <Route path="/landing" element={<Landing />} />
       <Route path="/login" element={<SignIn />} />
       <Route path="/dashboard" element={<Dashboard />}>

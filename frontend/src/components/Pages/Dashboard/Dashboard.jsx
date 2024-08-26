@@ -44,7 +44,7 @@ const AppBar = styled(MuiAppBar, {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen,
   }),
-  backgroundColor: '#b2cefe', // Light pastel color
+  backgroundColor: '#fff', // Light pastel color
   boxShadow: 'none', // Remove the box shadow
   ...(open && {
     marginLeft: drawerWidth,
@@ -68,6 +68,8 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
         easing: theme.transitions.easing.sharp,
         duration: theme.transitions.duration.enteringScreen,
       }),
+      backgroundColor: '#fff',
+      border: 'none',
       boxSizing: 'border-box',
       ...(!open && {
         overflowX: 'hidden',
@@ -136,24 +138,25 @@ export default function Dashboard() {
             sx={{
               display: 'flex',
               alignItems: 'center',
+              justifyContent: 'center',
               justifyContent: 'space-between',
-              backgroundColor: '#b2cefe'
+              backgroundColor: '#fff'
             }}
-          > <h3>BookKeeper</h3>
+          > <h3 style={{margin: 0, padding: 0}} className='logo'>BookKeeper</h3>
             <IconButton onClick={toggleDrawer}>
               <ChevronLeftIcon />
             </IconButton>
           </Toolbar>
-          <Divider />
-          <List component="nav">
+         
+          <List component="nav" sx={{mt: 2}}>
             {mainListItems}
-            <Divider sx={{ my: 1 }} />
+            <Divider sx={{mb: 3 }} />
             {secondaryListItems}
           </List>
         </Drawer>
-        <Box component="main"  sx={{ backgroundColor: (theme) => theme.palette.mode === 'light' ? theme.palette.grey[100] : theme.palette.grey[900], flexGrow: 1, width: '100%', height: '100vh', overflow: 'auto' }}>
+        <Box component="main"  sx={{ backgroundColor: "#fff", flexGrow: 1, width: '100%', height: '100vh', overflow: 'hidden' }}>
           <Toolbar />
-          <Container sx={{ width: '100%', mt: 4, mb: 4 }} maxWidth={false}>
+          <Container sx={{ width: '100%', height: '100%', p: 3, borderRadius: '30px', backgroundColor: '#f2f5f7', overflow: 'scroll'  }} maxWidth={false}>
             <Outlet />
             <Copyright sx={{ pt: 4 }} />
           </Container>

@@ -5,9 +5,10 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import ListSubheader from '@mui/material/ListSubheader';
 import DashboardIcon from '@mui/icons-material/Dashboard';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import AssignmentIcon from '@mui/icons-material/Assignment';
+import CommentIcon from '@mui/icons-material/Comment';
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import { Link } from 'react-router-dom';
+import { Divider } from '@mui/material';
 
 export const mainListItems = (
   <React.Fragment>
@@ -19,7 +20,7 @@ export const mainListItems = (
     </ListItemButton>
     <ListItemButton component={Link} to="/dashboard/social">
       <ListItemIcon>
-        <ShoppingCartIcon />
+        <CommentIcon />
       </ListItemIcon>
       <ListItemText primary="Social" />
     </ListItemButton>
@@ -27,25 +28,26 @@ export const mainListItems = (
 );
 
 export const secondaryListItems = (
-  <React.Fragment>
-    <ListSubheader component="div" inset>
-      Saved reports
+  <React.Fragment >
+    <ListSubheader component="div" inset sx={{color: '#2a4c81', backgroundColor: "#fff"}}>
+      More Filters
     </ListSubheader>
-    <ListItemButton component={Link} to="/dashboard/current-month">
+    <Divider />
+    <ListItemButton sx={{mt: 1}} component={Link} to="/dashboard/current-month">
       <ListItemIcon>
-        <AssignmentIcon />
+        <AccessTimeIcon />
       </ListItemIcon>
       <ListItemText primary="Current month" />
     </ListItemButton>
     <ListItemButton component={Link} to="/dashboard/last-quarter">
       <ListItemIcon>
-        <AssignmentIcon />
+        <AccessTimeIcon />
       </ListItemIcon>
       <ListItemText primary="Last quarter" />
     </ListItemButton>
     <ListItemButton component={Link} to="/dashboard/year-end-sale">
       <ListItemIcon>
-        <AssignmentIcon />
+        <AccessTimeIcon />
       </ListItemIcon>
       <ListItemText primary="Year-end sale" />
     </ListItemButton>

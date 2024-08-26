@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Pacifico&display=swap');
+
 *{
   padding: 0;
   margin: 0;
@@ -59,5 +62,19 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+.maxcon{
+  max-width: 1500px !important;
+}
+.logo{
+  font-family: "Pacifico", cursive;
+  font-size: 20px;
+  color: #75a9fd;
+  letter-spacing: 3px !important;
+}
+
+.card-title{
+  font-family: "DM Serif Text", serif !important;
 }
 

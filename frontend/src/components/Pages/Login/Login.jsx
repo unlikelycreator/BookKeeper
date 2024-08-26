@@ -41,7 +41,7 @@ export default function SignIn() {
 
   
     try {
-      const baseUrl = 'http://localhost:5000'; // Your backend URL
+      const baseUrl = 'http://localhost:5000'; 
   
       if (isSignUp) {
         await axios.post(`${baseUrl}/api/signup`, {
@@ -49,21 +49,18 @@ export default function SignIn() {
           email: data.get('email'),
           password: data.get('password'),
         });
-        alert('Sign up successful');
         navigate('/login'); // Redirect to login page after sign up
       } else if (isForgotPassword) {
         await axios.post(`${baseUrl}/api/forgot-password`, {
           email: data.get('email'),
           newPassword: data.get('password'),
         });
-        alert('Password reset successful');
         navigate('/login'); // Redirect to login page after password reset
       } else {
         const response = await axios.post(`${baseUrl}/api/signin`, {
           email: data.get('email'),
           password: data.get('password'),
         });
-        alert('Sign in successful');
         localStorage.setItem('token', response.data.token); 
         localStorage.setItem('UserId', response.data.UserId); 
         navigate('/dashboard/home'); 
